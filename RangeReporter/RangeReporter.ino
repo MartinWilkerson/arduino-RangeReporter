@@ -3,8 +3,11 @@
  Created:	3/14/2017 9:27:16 PM
  Author:	drwil_000
 */
+#define US_PER_CM 58.0;
+
 const byte triggerPin = 4;
 const byte echoPin = 3;
+
 volatile unsigned long start = 0, end = 0, temp;
 unsigned long runFromMillis = 0;
 
@@ -34,7 +37,7 @@ void loop() {
 		/*Serial.print("Time: ");
 		Serial.print(duration);
 		Serial.println("us");*/
-		float cm = (duration) / 58.0;
+		float cm = (duration) / US_PER_CM;
 		Serial.print("Distance: ");
 		Serial.print(cm);
 		Serial.println("cm");
